@@ -1,7 +1,7 @@
 class BitVector {
   constructor(size) {
       if (size <= 0) {
-          throw new Error('Size must be greater than 0');
+          throw new Error("Size must be greater than 0");
       }
       this.size = size;
       this.bits = new Array(Math.ceil(size / 32)).fill(0);
@@ -9,16 +9,16 @@ class BitVector {
 
   set(bitIndex) {
       if (bitIndex < 0 || bitIndex >= this.size) {
-          throw new Error('Invalid bit index');
+          throw new Error("Invalid bit index");
       }
       const wordIndex = Math.floor(bitIndex / 32);
       const bitOffset = bitIndex % 32;
       this.bits[wordIndex] |= (1 << bitOffset);
   }
-
+  
   reset(bitIndex) {
       if (bitIndex < 0 || bitIndex >= this.size) {
-          throw new Error('Invalid bit index');
+          throw new Error("Invalid bit index");
       }
       const wordIndex = Math.floor(bitIndex / 32);
       const bitOffset = bitIndex % 32;
@@ -27,7 +27,7 @@ class BitVector {
 
   get(bitIndex) {
       if (bitIndex < 0 || bitIndex >= this.size) {
-          throw new Error('Invalid bit index');
+          throw new Error("Invalid bit index");
       }
       const wordIndex = Math.floor(bitIndex / 32);
       const bitOffset = bitIndex % 32;
